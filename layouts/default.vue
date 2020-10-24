@@ -1,21 +1,44 @@
 <template>
-  <div>
+  <div class="wrapper">
+    <Header /> 
     <Nuxt />
+    <Footer />
   </div>
 </template>
 
-<style>
+<script lang="ts">
+import { Vue, Component } from 'nuxt-property-decorator'
+import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
+
+@Component({
+  components: {
+    Header,
+    Footer
+  }
+})
+export default class extends Vue {
+}
+</script>
+
+<style lang="scss">
 html {
   font-family:
-    'Source Sans Pro',
+    Quicksand,
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
     Roboto,
     'Helvetica Neue',
     Arial,
-    sans-serif;
+    sans-serif,
+    'Noto Sans',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-size: 16px;
+  color: #2f495e;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -29,6 +52,16 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
 }
 
 .button--green {
@@ -58,5 +91,13 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+a {
+  color: #2f495e;
+
+  &:hover {
+    color: #2f495e;
+  }
 }
 </style>
