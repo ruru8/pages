@@ -1,6 +1,6 @@
 <template>
   <article>
-    <b-container class="mt-2">
+    <b-container class="article">
       <div class="date text-secondary">{{ moment(blog.date, "YYYY MMMM Do, dddd")}}</div>
       <h1>{{blog.title}}</h1>
       <!-- <div><img :src="blog.image" /></div> -->

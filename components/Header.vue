@@ -1,7 +1,7 @@
 <template>
   <header>
-    <div class="container relative d-none d-sm-flex align-items-center py-3"> 
-      <a href="/" class="top">ruru8.net</a>
+    <div class="pc-nav container relative d-none d-sm-flex align-items-center py-2"> 
+      <a href="/" class="top-logo">ruru8.net</a>
       <b-nav class="w-100  justify-content-end font-weight-bold">
         <b-nav-item href="https://github.com/ruru8" target="_blank"><font-awesome-icon :icon="['fab', 'github']" /></b-nav-item>
         <b-nav-item href="https://twitter.com/_ruru8" target="_blank"><font-awesome-icon :icon="['fab', 'twitter']" /></b-nav-item>
@@ -10,18 +10,18 @@
       </b-nav>
     </div>
 
-    <div class="w-100 d-block d-sm-none">
-      <b-navbar toggleable type="bright" variant="bright">
-        <b-navbar-brand href="/" class="top">ruru8.net</b-navbar-brand>
-
-        <b-navbar-toggle target="navbar-toggle-collapse" class="menu-trigger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </b-navbar-toggle>
+    <div class="sp-nav d-block d-sm-none">
+      <b-navbar-toggle target="navbar-toggle-collapse" class="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </b-navbar-toggle>
+      <b-navbar toggleable type="bright" variant="bright" class="p-0">
+        <b-navbar-brand href="/" class="top-logo pl-3">ruru8.net</b-navbar-brand>
 
         <b-collapse id="navbar-toggle-collapse" is-nav>
-          <b-navbar-nav class="ml-auto">
+          <b-navbar-nav class="ml-auto pl-3 pt-4 pb-3">
+            <b-nav-item href="/">Top</b-nav-item>
             <b-nav-item href="/about">About</b-nav-item>
             <b-nav-item href="/blog">Blog</b-nav-item>
             <div class="py-2">
@@ -39,8 +39,9 @@
 <style lang="scss">
 header {
   width: 100%;
+  background-color: white;
 
-  .top {
+  .top-logo {
     font-size: 2.5em;
     font-weight: 200;
     &:hover {
@@ -48,47 +49,60 @@ header {
     }
   }
 
-  //  ハンバーガーメニュー
-  .menu-trigger {
-    position: relative;
-    width: 32px;
-    height: 30px;
-    
-    span {
-      display: inline-block;
-      transition: all .4s;
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: darkgray;
-      border-radius: 4px;
-
-      &:nth-of-type(1) {
-        top: 0;
-      }
-      &:nth-of-type(2) {
-        top: 13px;
-      }
-      &:nth-of-type(3) {
-        bottom: 0;
-      }
-    }
-
-    &.not-collapsed {
+  .sp-nav {
+    //  ハンバーガーメニュー
+    .menu-trigger {
+      position: fixed;
+      top: 20px;
+      right: 15px;
+      z-index: 10;
+      width: 32px;
+      height: 30px;
+      
       span {
+        display: inline-block;
+        transition: all .4s;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: darkgray;
+        border-radius: 4px;
+
         &:nth-of-type(1) {
-          -webkit-transform: translateY(12px) rotate(-45deg);
-          transform: translateY(12px) rotate(-45deg);
+          top: 0;
         }
         &:nth-of-type(2) {
-          opacity: 0;
+          top: 13px;
         }
         &:nth-of-type(3) {
-          -webkit-transform: translateY(-12px) rotate(45deg);
-          transform: translateY(-12px) rotate(45deg);
+          bottom: 0;
         }
       }
+
+      &.not-collapsed {
+        span {
+          &:nth-of-type(1) {
+            -webkit-transform: translateY(12px) rotate(-45deg);
+            transform: translateY(12px) rotate(-45deg);
+          }
+          &:nth-of-type(2) {
+            opacity: 0;
+          }
+          &:nth-of-type(3) {
+            -webkit-transform: translateY(-12px) rotate(45deg);
+            transform: translateY(-12px) rotate(45deg);
+          }
+        }
+      }
+    }
+    .navbar-collapse {
+      position: fixed;
+      top: 0;
+      background: white;
+      width: 100%;
+      z-index: 9;
+      border-bottom: 1px solid #ddd;
     }
   }
 }

@@ -1,5 +1,6 @@
 <template>
-  <b-container class="mt-2">
+  <b-container class="blog">
+    <h2 class="mb-4">Blog</h2>
     <div v-for="blog in blogs" :key="blog.slug">
       <div class="mb-3">
         <div class="date text-secondary">

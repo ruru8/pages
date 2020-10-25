@@ -60,6 +60,10 @@ html {
   min-height: 100vh;
 }
 
+// .top, .about, .blog, .article, .private {
+//   margin-top: 90px;
+// }
+
 footer {
   margin-top: auto;
 }
@@ -93,6 +97,14 @@ footer {
   background-color: #35495e;
 }
 
+h1, h2, h3, h4, p, svg, div {
+  color: #2f495e;
+}
+
+h2, h3, h4 {
+  font-weight: 400;
+}
+
 a {
   color: #2f495e;
 
@@ -100,4 +112,5 @@ a {
     color: #2f495e;
   }
 }
+
 </style>
