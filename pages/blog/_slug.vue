@@ -48,5 +48,13 @@ article{
   img {
     max-width: 100%;
   }
+
+  a {
+    word-break: break-all;
+  }
+
+  pre {
+    background: whitesmoke;
+  }
 }
 </style>
