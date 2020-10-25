@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="pc-nav container relative d-none d-sm-flex align-items-center py-2"> 
-      <a href="/" class="top-logo">ruru8.net</a>
+      <nuxt-link to="/" class="top-logo">ruru8.net</nuxt-link>
       <b-nav class="w-100  justify-content-end font-weight-bold">
         <b-nav-item href="https://github.com/ruru8" target="_blank"><font-awesome-icon :icon="['fab', 'github']" /></b-nav-item>
         <b-nav-item href="https://twitter.com/_ruru8" target="_blank"><font-awesome-icon :icon="['fab', 'twitter']" /></b-nav-item>
@@ -17,13 +17,13 @@
         <span></span>
       </b-navbar-toggle>
       <b-navbar toggleable type="bright" variant="bright" class="p-0">
-        <b-navbar-brand href="/" class="top-logo pl-3">ruru8.net</b-navbar-brand>
+        <b-navbar-brand class="pl-3"><nuxt-link to="/" class="top-logo">ruru8.net</nuxt-link></b-navbar-brand>
 
         <b-collapse id="navbar-toggle-collapse" is-nav>
           <b-navbar-nav class="ml-auto pl-3 pt-4 pb-3">
-            <b-nav-item href="/">Top</b-nav-item>
-            <b-nav-item href="/about">About</b-nav-item>
-            <b-nav-item href="/blog">Blog</b-nav-item>
+            <b-nav-item><nuxt-link to="/">Top</nuxt-link></b-nav-item>
+            <b-nav-item><nuxt-link to="/about">About</nuxt-link></b-nav-item>
+            <b-nav-item><nuxt-link to="/blog">Blog</nuxt-link></b-nav-item>
             <div class="py-2">
               <a href="https://github.com/ruru8" target="_blank" class="mr-2"><font-awesome-icon :icon="['fab', 'github']" /></a>
               <a href="https://twitter.com/_ruru8" target="_blank" class="mr-2"><font-awesome-icon :icon="['fab', 'twitter']" /></a>
