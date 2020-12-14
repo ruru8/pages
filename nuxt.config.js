@@ -27,6 +27,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -48,6 +49,10 @@ export default {
         icons: ['fab']
       }
     ]
+  },
+
+  googleAnalytics: {
+    id: 'UA-185459756-1'
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
